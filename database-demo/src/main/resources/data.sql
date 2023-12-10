@@ -10,3 +10,10 @@ create table person
     birth_date timestamp,
     primary key(id)
 );
+
+INSERT INTO person (id, name, location, birth_date)
+VALUES ( 10001, 'Thanh', 'SG', CURRENT_DATE );
+insert into person (id, name, location, birth_date)
+values ( 10002, 'Anh', 'Singapore', CURRENT_DATE );
+insert into person (id, name, location, birth_date)
+VALUES ( 10003, 'Khai', 'NY', CURRENT_DATE );
