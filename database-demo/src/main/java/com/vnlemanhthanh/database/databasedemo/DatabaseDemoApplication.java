@@ -2,11 +2,11 @@
  * Copyright (c) 2023. vnlemanhthanh.com
  */
 
-package com.vnleamnhthanh.database.databasedemo;
+package com.vnlemanhthanh.database.databasedemo;
 
 
-import com.vnleamnhthanh.database.databasedemo.entity.Person;
-import com.vnleamnhthanh.database.databasedemo.jdbc.PersonJdbcDao;
+import com.vnlemanhthanh.database.databasedemo.entity.Person;
+import com.vnlemanhthanh.database.databasedemo.jdbc.PersonJdbcDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

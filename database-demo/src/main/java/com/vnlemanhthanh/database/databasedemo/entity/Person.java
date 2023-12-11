@@ -2,7 +2,7 @@
  * Copyright (c) 2023. vnlemanhthanh.com
  */
 
-package com.vnleamnhthanh.database.databasedemo.entity;
+package com.vnlemanhthanh.database.databasedemo.entity;
 
 import java.util.Date;
 
