@@ -5,10 +5,11 @@
 package com.vnlemanhthanh.database.databasedemo.jpa;
 
 import com.vnlemanhthanh.database.databasedemo.entity.Person;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Repository
 @Transactional
