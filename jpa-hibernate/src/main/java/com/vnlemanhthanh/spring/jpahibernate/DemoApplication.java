@@ -1,6 +1,5 @@
 package com.vnlemanhthanh.spring.jpahibernate;
 
-import com.vnlemanhthanh.spring.jpahibernate.entity.Course;
 import com.vnlemanhthanh.spring.jpahibernate.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,8 +21,6 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Course course = repository.findById(10001L);
-        logger.info("Course 10001 -> {}", course);
-        repository.save(new Course("Microservice in 100 Steps"));
+        repository.playWithEntityManager();
     }
 }
