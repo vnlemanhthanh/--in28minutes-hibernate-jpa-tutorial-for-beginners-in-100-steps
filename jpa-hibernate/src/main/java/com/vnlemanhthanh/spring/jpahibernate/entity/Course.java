@@ -4,10 +4,7 @@
 
 package com.vnlemanhthanh.spring.jpahibernate.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "CourseDetails")
@@ -15,6 +12,8 @@ public class Course {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(nullable = false)
     private String name;
 
     protected Course() {
