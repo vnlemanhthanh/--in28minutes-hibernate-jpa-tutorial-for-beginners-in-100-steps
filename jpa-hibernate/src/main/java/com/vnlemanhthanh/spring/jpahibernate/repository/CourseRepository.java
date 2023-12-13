@@ -54,16 +54,17 @@ public class CourseRepository {
         em.persist(course1);
         Course course2 = new Course("AngularJS  in 100 Steps");
         em.persist(course2);
+
         em.flush();
 
-        em.detach(course1);
-        em.detach(course2);
+        //em.detach(course1);
+        //em.detach(course2);
 
         course1.setName("Web Services in 200 Steps - Updated");
-        em.flush();
-
         course2.setName("AngularJS  in 500 Steps - Updated");
-        em.flush();
+        //em.flush();
+
+        em.refresh(course1);
     }
 
 }
