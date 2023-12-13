@@ -11,7 +11,10 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "CourseDetails")
+@NamedQueries(value = {
+        @NamedQuery(name = "query_get_all_course", query = "select c from Course c"),
+        @NamedQuery(name = "query_get_100_Step_courses", query = "select c from Course c where name like '%100 Steps'")
+    })
 public class Course {
     @Id
     @GeneratedValue
