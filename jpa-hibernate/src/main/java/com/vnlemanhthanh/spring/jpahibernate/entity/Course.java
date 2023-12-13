@@ -4,7 +4,11 @@
 
 package com.vnlemanhthanh.spring.jpahibernate.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "CourseDetails")
@@ -15,6 +19,12 @@ public class Course {
 
     @Column(nullable = false)
     private String name;
+
+    @UpdateTimestamp
+    private LocalDateTime lastUpdatedDate;
+
+    @CreationTimestamp
+    private LocalDateTime createdDate;
 
     protected Course() {
     }
