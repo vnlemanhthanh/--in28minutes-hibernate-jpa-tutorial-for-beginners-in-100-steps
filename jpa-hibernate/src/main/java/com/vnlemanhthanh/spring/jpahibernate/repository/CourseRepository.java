@@ -5,6 +5,7 @@
 package com.vnlemanhthanh.spring.jpahibernate.repository;
 
 import com.vnlemanhthanh.spring.jpahibernate.entity.Course;
+import com.vnlemanhthanh.spring.jpahibernate.entity.Review;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,4 +58,20 @@ public class CourseRepository {
         course2.setName("JPA in 50 Steps - Updated");
     }
 
+    public void addReviewsForCourse() {
+        Course course = findById(10003L);
+        logger.info("course.getReviews() -> {}", course.getReviews());
+
+        Review review1 = new Review("5", "Great Hands-on Stuff.");
+        Review review2 = new Review("5", "Hatsoff.");
+
+        course.addReviews(review1);
+        review1.setCourse(course);
+
+        course.addReviews(review2);
+        review2.setCourse(course);
+
+        em.persist(review1);
+        em.persist(review2);
+    }
 }
