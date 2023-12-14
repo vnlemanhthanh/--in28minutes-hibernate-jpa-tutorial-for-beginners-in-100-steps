@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 /**
  *
@@ -58,20 +59,15 @@ public class CourseRepository {
         course2.setName("JPA in 50 Steps - Updated");
     }
 
-    public void addReviewsForCourse() {
-        Course course = findById(10003L);
+    public void addReviewsForCourse(Long courseId, List<Review> reviews) {
+        Course course = findById(courseId);
         logger.info("course.getReviews() -> {}", course.getReviews());
 
-        Review review1 = new Review("5", "Great Hands-on Stuff.");
-        Review review2 = new Review("5", "Hatsoff.");
+        for (Review review : reviews) {
+            course.addReviews(review);
+            review.setCourse(course);
+            em.persist(review);
+        }
 
-        course.addReviews(review1);
-        review1.setCourse(course);
-
-        course.addReviews(review2);
-        review2.setCourse(course);
-
-        em.persist(review1);
-        em.persist(review2);
     }
 }
