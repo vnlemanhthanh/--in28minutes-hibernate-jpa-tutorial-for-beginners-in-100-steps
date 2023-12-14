@@ -5,6 +5,7 @@
 package com.vnlemanhthanh.spring.jpahibernate.repository;
 
 import com.vnlemanhthanh.spring.jpahibernate.DemoApplication;
+import com.vnlemanhthanh.spring.jpahibernate.entity.Passport;
 import com.vnlemanhthanh.spring.jpahibernate.entity.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,6 +34,13 @@ public class StudentRepositoryTest {
         Student student = em.find(Student.class, 20001L);
         logger.info("student -> {}", student);
         logger.info("passport -> {}", student.getPassport());
+    }
+
+    @Test
+    public void retrievePassportAndAssociatedStudent() {
+        Passport passport = em.find(Passport.class, 40001L);
+        logger.info("passport -> {}", passport);
+        logger.info("student -> {}", passport.getStudent());
     }
 
     @Test
